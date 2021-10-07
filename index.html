@@ -26,8 +26,10 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="switch"><span></span><span></span><span></span></div>
     </nav>
+    <div id="nav-switch" class="switch">
+      <span></span><span></span><span></span>
+    </div>
     <section id="home">
       <img src="./assets/poetess-2.svg" alt="poetess" />
       <nav>
@@ -128,18 +130,22 @@
       <div class="work-right">
         <div class="work-content">
           <img src="//unsplash.it/1000" alt="img" />
+          <!-- <div id="cw" class="bg"></div> -->
           <span>Creative Writing</span>
         </div>
         <div class="work-content">
           <img src="//unsplash.it/1001" alt="img" />
+          <!-- <div id="pw" class="bg"></div> -->
           <span>Poetry Writing</span>
         </div>
         <div class="work-content">
           <img src="//unsplash.it/1002" alt="img" />
+          <!-- <div id="editorials" class="bg"></div> -->
           <span>Editorials</span>
         </div>
         <div class="work-content">
           <img src="//unsplash.it/1003" alt="img" />
+          <!-- <div id="pb" class="bg"></div> -->
           <span>Personal Blog</span>
         </div>
       </div>
@@ -220,8 +226,16 @@
     </section>
 
     <section id="footer">
-      <img src="//unsplash.it/1920/1080" alt="footer" />
+      <img class="f-bg" src="//unsplash.it/1920/1080" alt="footer" />
       <img class="f-image" src="./assets/poetess-2.svg" alt="poetess" />
     </section>
+
+    <!-- Java Script -->
+    <!-- Includes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>

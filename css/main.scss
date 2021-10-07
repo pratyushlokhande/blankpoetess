@@ -269,12 +269,13 @@ body {
       position: relative;
       width: 100%;
       height: 100vh;
-
+      overflow: hidden;
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transform: scale(1.5);
       }
 
       span {
@@ -349,12 +350,14 @@ body {
       position: relative;
       width: 100%;
       height: 100vh;
+      overflow: hidden;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
+        transform: scale(1.5);
       }
 
       span {
@@ -492,8 +495,9 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-
+  overflow: hidden;
   img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -512,81 +516,92 @@ body {
 
 #main-nav {
   display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  clip-path: circle(3.5% at calc(100% - 3.5rem) calc(3.5rem));
+  overflow: hidden;
+  transition: all ease 250ms;
+  opacity: 0;
+
+  .navbar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff5c58;
+    gap: 5rem;
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2rem;
+
+      li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.nav-active {
+  // transform: translateY(0) !important;
+  clip-path: circle(100%) !important;
+  opacity: 1 !important;
+}
+
+.switch {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  span {
+    position: relative;
+    width: 50%;
+    height: 0.3rem;
+    background-color: #ff5c58;
+
+    &:first-child,
+    &:last-child {
+      width: 30%;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
   #main-nav {
-    display: block;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    clip-path: circle(3.5% at calc(100% - 3.5rem) calc(3.5rem));
-
-    .navbar {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #ff5c58;
-      gap: 5rem;
-
-      img {
-        width: 8rem;
-        height: 8rem;
-      }
-
-      ul {
-        list-style-type: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        gap: 2rem;
-
-        li a {
-          text-decoration: none;
-          color: #fff;
-          font-size: 2rem;
-          font-weight: 600;
-        }
-      }
-    }
+    display: inline-block;
   }
 
   .switch {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.2rem;
-    border-radius: 50%;
-    overflow: hidden;
-    span {
-      position: relative;
-      width: 50%;
-      height: 0.3rem;
-      background-color: #ff5c58;
-
-      &:first-child,
-      &:last-child {
-        width: 30%;
-      }
-    }
-  }
-
-  &:hover {
-    clip-path: circle(100%);
   }
 }
